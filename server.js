@@ -37,7 +37,6 @@ server.get('/', (req, res, next) => {
     res.end;
 });
 
-
 /*
 / Route
 / Components Route
