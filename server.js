@@ -3,6 +3,7 @@
 const restify = require('restify');
 // const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
+const corsMidware = require('restify-cors-middleware');
 
 /*
 / Menentukan Nama Server Dan Versi Server
@@ -17,6 +18,15 @@ server.use(bodyParser.json());
 /
 /
 */
+
+const cors = corsMidware({
+    origins: ['*'],
+    allowHeaders: ['X-App-Version'],
+    exposeHeaders:[]
+});
+
+server.pre(cors.preflight);
+server.use(cors.actual);
 
 server.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
