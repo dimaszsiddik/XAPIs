@@ -82,6 +82,8 @@ require('./components/controllers/categories.controller')(server);
 
 require('./components/controllers/products.controller')(server);
 
+require('./components/controllers/tables.controller')(server);
+
 //test router
 require('./components/controllers/template.controller')(server, 'tests');
 
