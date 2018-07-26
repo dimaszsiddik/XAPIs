@@ -28,12 +28,12 @@ const cors = corsMidware({
 server.pre(cors.preflight);
 server.use(cors.actual);
 
-server.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PUT");
-    next();
-});
+// server.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PUT");
+//     next();
+// });
 
 server.get('/', (req, res, next) => {
     var html = '<html><head><title>Some Title</title></head><body><h1>LiveCode</h1></body></html>';
