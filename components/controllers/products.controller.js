@@ -22,6 +22,7 @@ module.exports = exports = function (server) {
                             "name": 1,
                             "price": 1,
                             "_id": 1,
+                            "active":1,
                             "categoryId": 1,
                             "category.initial": 1,
                             "category.name": 1
