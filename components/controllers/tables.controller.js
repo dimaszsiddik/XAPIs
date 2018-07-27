@@ -8,6 +8,7 @@ module.exports = exports = function (server){
    
 
     templateCtrl(server, name);
+    
 
    
 }
