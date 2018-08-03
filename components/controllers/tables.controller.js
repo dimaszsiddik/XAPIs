@@ -1,14 +1,14 @@
 'use strict';
 
-
+const MongoClient = require('mongodb').MongoClient;
 const templateCtrl = require('./template.controller');
 
 module.exports = exports = function (server) {
     let name = 'tables';
-
+    let dbo;
 
     templateCtrl(server, name);
-    server.get('/api/tableorder', (req, res, next) => {
+    server.get('/api/tablesorder', (req, res, next) => {
         MongoClient.connect(config.dbconn, function (err, db) {
             if (err) throw err;
             dbo = db.db(config.dbname);
