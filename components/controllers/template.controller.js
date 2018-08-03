@@ -90,8 +90,6 @@ module.exports = exports = function (server, name) {
         console.log(req.method);
         MongoClient.connect(config.dbconn, async function (err, db) {
             if (err) throw err;
-            let id = req.params.id;
-            let entity = req.body;
             
             dbo = db.db(config.dbname);
             await dbo.collection(name).deleteMany({}).toArray(function (err, response) {
