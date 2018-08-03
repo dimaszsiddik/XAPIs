@@ -86,4 +86,20 @@ module.exports = exports = function (server, name) {
         });
     });
 
+    server.del(route , (req, res, next) => {
+        console.log(req.method);
+        MongoClient.connect(config.dbconn, async function (err, db) {
+            if (err) throw err;
+            let id = req.params.id;
+            let entity = req.body;
+            
+            dbo = db.db(config.dbname);
+            await dbo.collection(name).deleteMany({}).toArray(function (err, response) {
+                if (err) throw err;
+                res.send(200, response);
+                db.close();
+            });
+        });
+    });
+
 }
