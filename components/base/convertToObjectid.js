@@ -8,7 +8,7 @@ module.exports = function(entity){
     }
 
     if (entity.userId){
-        enity.userId = ObjectId(entity.userId );
+        entity.userId = ObjectId(entity.userId );
     }
     
 
