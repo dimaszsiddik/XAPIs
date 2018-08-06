@@ -10,6 +10,9 @@ module.exports = function(entity){
     if (entity.userId){
         entity.userId = ObjectId(entity.userId );
     }
+     if (entity.waiterId){
+        entity.waiterId = ObjectId(entity.waiterId );
+    }
     
 
     if (entity.productId){
